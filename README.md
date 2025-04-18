@@ -30,6 +30,7 @@ deployment.
 
 4.  Tomcat: A popular server for hosting Java-based applications.
 
+![IMG_20250418_192340](https://github.com/user-attachments/assets/668766e6-9014-43be-85ac-24b2779342a2)
 
 
 #  Steps to Deploy a Java-Based Application Using CI/CD
@@ -39,6 +40,10 @@ deployment.
 Jenkins Server
 
 Tomcat Server
+
+![IMG_20250418_193950](https://github.com/user-attachments/assets/f3ceaf14-abe7-4e77-86e5-786ddc044f37)
+
+
 
 ## STEP-2: Connect Jenkins server and Install Jenkins & GIT
 
@@ -76,9 +81,15 @@ systemctl status jenkins.service
 
 Now copy the public-ip of our system and access it with 8080 port.
 
+![IMG_20250418_194127](https://github.com/user-attachments/assets/34e54b5f-b5e9-471e-b782-9f32e96a84a1)
+
+
 ## STEP-3: Now Install Deploy to container plugin
 
 Go to Manage Jenkins » Plugins » Available Plugins » Deploy to container
+
+![IMG_20250418_192720](https://github.com/user-attachments/assets/04a36f9e-d89c-43b1-a531-ddee8a856b03)
+
 
 ## STEP-4: Integrate Maven
 
@@ -90,6 +101,9 @@ Name: mymaven
 
 Version: (3.8.6)
 
+![IMG_20250418_192402](https://github.com/user-attachments/assets/0044e540-f30c-4fc1-abe9-2aa54f014115)
+
+
 Now click on save
 
 ## STEP-5: Create a Free Style Job
@@ -99,12 +113,31 @@ Go to Source Code Management and select Git and enter the repo-url
 
 (https://github.com/bharath5806/Hello-java--Maven.git)
 
+![IMG_20250418_192651](https://github.com/user-attachments/assets/92f0ec51-aa92-43e0-8037-bcaf88f33d44)
+
+
 Go to Build Steps and select "Invoke top-level Maven targets" and select the Maven version as 
 "mymaven"
 
 Now enter the goal as ""clean package""
 
+Save the job and click on Build Now
+
+
+![IMG_20250418_192607](https://github.com/user-attachments/assets/980be1d6-341c-49b5-b882-33f645a89566)
+
+
+
+![IMG_20250418_192448](https://github.com/user-attachments/assets/3a149112-d674-4083-b843-609efbafef7a)
+
+
+
+
 If the build gets success, go to workspace and open the target folder, we will get war file
+
+
+![IMG_20250418_192547](https://github.com/user-attachments/assets/f7f2ec88-411a-44d3-92ad-412d76cef531)
+
 
 ## STEP-6: Deploy the application on Tomcat Server
 
